@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { View, KeyboardAvoidingView, TextInput, StyleSheet,
      Text, Platform, TouchableWithoutFeedback, Keyboard, Image } from 'react-native';
 
-const Inputs = () => {
+const Inputs = ({navigation}) => {
     let [oculto, setOculto] = useState(true)
     return (
     <KeyboardAvoidingView
@@ -40,7 +40,7 @@ const Inputs = () => {
                     <View style={{alignItems:'flex-end', marginBottom:25}}>
                         <Text style={styles.textoRecuperar}>Recuperar contraseña?</Text>
                     </View>
-                    <TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback onPress={() => navigation.navigate('Ordenes')}>
                         <View style={styles.contenedorIngresar}>
                             <Text style={styles.textoIngresar}>Ingresar</Text>
                         </View>

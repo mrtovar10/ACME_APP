@@ -1,67 +1,29 @@
 import React from "react";
 import { View, Text, StatusBar, ImageBackground } from "react-native";
 import Constants from "expo-constants";
-import ListaDeOrdenes from "./ListaDeOrdenes";
-import AbiertaCerrada from "./AbiertasCerradas";
-import ListaFechas from "./ListaFechas";
-import TecnicoHeader from "./TecnicoHeader";
-import Background from "./Login/Background";
-import Login from "./Login/Login";
-import Inputs from "./Login/Inputs";
+import LoginCompleto from "./Login/LoginCompleto";
 import {createStackNavigator} from '@react-navigation/stack'
+import ListaCompleta from "./ListaDeOrdenes/ListaCompleta";
 
 const Stack = createStackNavigator();
-
-const RutaLogin = () => {
-    return (
-        <View style={estilos}>
-            <StatusBar translucent backgroundColor='transparent' />
-            <Background/>
-        </View>
-    )
-}
-
-const RutaListaOrdenes = () => {
-    return (
-        <View style={estilos}>
-            <TecnicoHeader/>
-            <ListaFechas/>
-            <AbiertaCerrada/>
-            <ListaDeOrdenes/>
-        </View>
-    )
-}
 
 const Main = () => {
     StatusBar.setBackgroundColor("rgba(0, 75, 194, 0.82)",false)
     StatusBar.setBarStyle('light-content')
-    return (
-        // Listado de Ordenes
-        // <View style={estilos}>
-        //     <TecnicoHeader/>
-        //     <ListaFechas/>
-        //     <AbiertaCerrada/>
-        //     <ListaDeOrdenes/>
-        // </View>
 
-        // Login
-        <Stack.Navigator>
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false}}>
             <Stack.Screen
             name='Login'
-            component = {RutaLogin}
+            component = {LoginCompleto}
+            // options={{ headerShown: true }}
             />
+
             <Stack.Screen
             name='Ordenes'
-            component = {RutaListaOrdenes}
+            component = {ListaCompleta}
             />
         </Stack.Navigator>
-        // <View style={estilos}>
-        //     <StatusBar translucent backgroundColor='transparent' />
-        //     <Background/>
-        // </View>
-
-        //Keyboard
-        // <Inputs/>
     )
 }
 

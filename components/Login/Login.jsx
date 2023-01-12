@@ -4,7 +4,7 @@ import {View, StyleSheet, Text,
 import React, {useState} from "react";
 import Inputs from "./Inputs";
 
-const Login = ()=> {
+const Login = ({navigation})=> {
     let [oculto, setOculto] = useState(true)
     return (
         <View style={{flex:1}}>
@@ -18,7 +18,7 @@ const Login = ()=> {
             <View style={styles.acme}>
                 <Image style={styles.img} source={require('../../assets/aCMEB.png')}/>
             </View>
-            <Inputs/>
+            <Inputs navigation={navigation}/>
         </View> 
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {View, StyleSheet, FlatList, TouchableWithoutFeedback} from "react-native";
+import {View, StyleSheet, FlatList, TouchableWithoutFeedback, Text} from "react-native";
 import StyledText from "../estilos/textos.js";
 import fechas from "../data/rangoFechas.js";
 
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         width:43,
         height:49,
         borderRadius:4,
-        overflow:'hidden'
+        overflow:'hidden',
     },
     contendorActivo: {
         alignItems:'center',
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         width:43,
         height:49,
         borderRadius:4,
-        overflow:'hidden'
+        overflow:'hidden',
     },
 })
 
